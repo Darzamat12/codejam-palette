@@ -21,8 +21,37 @@
         </div>
     </header>
 
-    <div class="tools"></div>
-    <div class="colors"></div>
+    <div class="tools">
+        <div class="tools__bucket">
+            <img src="bucket.svg" alt="bucket"><p>Fill Bucket</p>
+        </div>
+        <div class="tools__color-picker">
+            <img src="colorPick.png" alt="picker">
+            <p>Color Picker</p>
+        </div>
+        <div class="tools__pencil active-tool">
+            <img src="pencil.png" alt="pencil">
+            <p>Pencil</p>
+        </div>
+    </div>
+    <div class="colors">
+        <div class="colors__current-color">
+            <div class="current-circle"></div>
+            <p>Current color</p>
+        </div>
+        <div class="colors__previus-color">
+            <div class="previus-circle"></div>
+            <p>Previus color</p>
+        </div>
+        <div class="colors__red">
+            <div class="red-circle"></div>
+            <p>red</p>
+        </div>
+        <div class="colors__blue">
+            <div class="blue-circle"></div>
+            <p>blue</p>
+        </div>
+    </div>
     <canvas class="canvas" id="canvas" height=512px width=512px>
 
     </canvas>
