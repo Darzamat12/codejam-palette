@@ -36,14 +36,16 @@ if (localStorage.getItem('canvas')) {
   const dataURL = localStorage.getItem('canvas');
   const img = new Image();
   img.src = dataURL;
-  img.onload = function () {
+  img.onload = () => {
     ctx.drawImage(img, 0, 0);
   };
 } else {
-  for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) {
-    ctx.fillStyle = basicColors[i][j];
-    ctx.fillRect(128 * i, 128 * j, 128, 128);
-  }
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 4; j++) {
+      ctx.fillStyle = basicColors[i][j];
+      ctx.fillRect(128 * i, 128 * j, 128, 128);
+    }git
+}
 }
 canvas.onmousedown = function (event) {
   if (currentTool === 'pencil') {
