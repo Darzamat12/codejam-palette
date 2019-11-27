@@ -44,7 +44,7 @@ if (localStorage.getItem('canvas')) {
     for (let j = 0; j < 4; j++) {
       ctx.fillStyle = basicColors[i][j];
       ctx.fillRect(128 * i, 128 * j, 128, 128);
-    }git
+    }
 }
 }
 canvas.onmousedown = function (event) {
