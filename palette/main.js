@@ -45,12 +45,14 @@ if (localStorage.getItem('canvas')) {
       ctx.fillStyle = basicColors[i][j];
       ctx.fillRect(128 * i, 128 * j, 128, 128);
     }
-}
+  }
 }
 canvas.onmousedown = (event) => {
   if (currentTool === 'pencil') {
     ctx.fillStyle = currentColor;
-    ctx.fillRect(128 * Math.floor(event.offsetX / 128), 128 * Math.floor(event.offsetY / 128), 128, 128);
+    const xOffset = event.offsetX;
+    const yOffset = event.offsetY;
+    ctx.fillRect(128 * Math.floor(xOffset / 128), 128 * Math.floor(yOffset / 128), 128, 128);
     canvas.onmousemove = (e) => {
       ctx.fillRect(128 * Math.floor(e.offsetX / 128), 128 * Math.floor(e.offsetY / 128), 128, 128);
     };
