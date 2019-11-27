@@ -9,15 +9,15 @@ function removeActiveClass() {
   document.querySelector('.tools__pencil').classList.remove('active-tool');
 }
 function rgbTranslate(r, g, b) {
-  r = r.toString(16);
-  g = g.toString(16);
-  b = b.toString(16);
+  let rc = r.toString(16);
+  let gc = g.toString(16);
+  let bc = b.toString(16);
 
-  if (r.length === 1) r = `0${r}`;
-  if (g.length === 1) g = `0${g}`;
-  if (b.length === 1) b = `0${b}`;
+  if (rc.length === 1) rc = `0${r}`;
+  if (gc.length === 1) gc = `0${g}`;
+  if (bc.length === 1) bc = `0${b}`;
 
-  return `#${r}${g}${b}`;
+  return `#${rc}${gc}${bc}`;
 }
 
 
@@ -40,18 +40,18 @@ if (localStorage.getItem('canvas')) {
     ctx.drawImage(img, 0, 0);
   };
 } else {
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 4; j++) {
+  for (let i = 0; i < 4; i += 1) {
+    for (let j = 0; j < 4; j += 1) {
       ctx.fillStyle = basicColors[i][j];
       ctx.fillRect(128 * i, 128 * j, 128, 128);
     }
 }
 }
-canvas.onmousedown = function (event) {
+canvas.onmousedown = (event) => {
   if (currentTool === 'pencil') {
     ctx.fillStyle = currentColor;
     ctx.fillRect(128 * Math.floor(event.offsetX / 128), 128 * Math.floor(event.offsetY / 128), 128, 128);
-    canvas.onmousemove = function (e) {
+    canvas.onmousemove = (e) => {
       ctx.fillRect(128 * Math.floor(e.offsetX / 128), 128 * Math.floor(e.offsetY / 128), 128, 128);
     };
     canvas.onmouseup = () => {
@@ -85,6 +85,7 @@ document.addEventListener('keyup', (event) => {
       currentTool = 'colorPicker';
       document.querySelector('.tools__color-picker').classList.add('active-tool');
       break;
+    default: break;
   }
 });
 document.querySelector('.colors__red').addEventListener('click', () => {
