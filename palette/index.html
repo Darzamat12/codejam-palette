@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link  rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header_menu">
+            <img src="Shape.png" alt="Menu">
+        </div>
+        <div class="header_heading">
+            Codejam-Palette
+        </div>
+        <div class="header_options">
+            <img src="Shape1.png" alt="options">
+        </div>
+    </header>
+
+    <div class="tools">
+        <div class="tools__bucket">
+            <img src="bucket.svg" alt="bucket"><p>Fill Bucket</p>
+        </div>
+        <div class="tools__color-picker">
+            <img src="colorPick.png" alt="picker">
+            <p>Color Picker</p>
+        </div>
+        <div class="tools__pencil active-tool">
+            <img src="pencil.png" alt="pencil">
+            <p>Pencil</p>
+        </div>
+    </div>
+    <div class="colors">
+        <div class="colors__current-color">
+            <div class="current-circle"></div>
+            <p>Current color</p>
+        </div>
+        <div class="colors__previus-color">
+            <div class="previus-circle"></div>
+            <p>Previus color</p>
+        </div>
+        <div class="colors__red">
+            <div class="red-circle"></div>
+            <p>red</p>
+        </div>
+        <div class="colors__blue">
+            <div class="blue-circle"></div>
+            <p>blue</p>
+        </div>
+    </div>
+    <canvas class="canvas" id="canvas" height=512px width=512px>
+
+    </canvas>
+    <script src="main.js"></script>
+</body>
+</html>
